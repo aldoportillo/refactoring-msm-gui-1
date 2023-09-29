@@ -11,4 +11,10 @@
 #  updated_at :datetime         not null
 #
 class Director < ApplicationRecord
+  def filmography 
+    my_director_id = self.id
+
+    films = Movie.where({:director_id => my_director_id}).order({ :year => :asc })
+    return films
+  end
 end
