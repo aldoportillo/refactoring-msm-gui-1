@@ -12,11 +12,11 @@
 #
 class Actor < ApplicationRecord
 
-  def roles
+  def characters
     my_actor_id = self.id
 
-    roles = Character.where({:actor_id => my_actor_id})
+    characters = Character.where({:actor_id => my_actor_id})
 
-    return roles
+    return characters
   end
 end
